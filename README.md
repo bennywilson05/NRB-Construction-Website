@@ -1,2 +1,2 @@
 # NRB-Construction-Website
-Website created for the construction company NRB Construction.
+This is a simple website that was created for the construction company NRB Construction. I learned Node.js to create a secure database for their contact and estimate forms, as those forms required sensitive information that would be provided by any clients interested in working with the company. This was my first ever website, and I'm very happy with how it turned out, as it took quite a bit to get the hang of coding anything in the frontend. 
