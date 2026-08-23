@@ -1,0 +1,50 @@
+.footer{
+    background-color: #252424;
+    height: auto;
+    color: rgb(255, 255, 255);
+    font-size: 14px;
+    padding-top: 50px;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 5%;
+    padding-bottom: 50px;
+}
+
+.footer-text{
+    font-size: 20px;
+    color: white;
+}
+
+.left-footer{
+    text-align: left;
+    width: 20%;
+}
+
+.mid-footer{
+    width: 20%;
+}
+
+.footer-logo{
+    transform: scale(0.85);
+    max-width: 100%;
+}
+
+.right-footer{
+    text-align: right;
+    width: 20%;
+}
+
+.footer-ig-logo{
+    height: 50px;
+    width: 50px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+}
+
+.footer-ig-logo:hover{
+    transform: scale(1.05);
+    cursor: pointer;
+    filter: brightness(1.3);
+}
