@@ -1,2 +1,2 @@
-# READ ME
+# NRB Construction Website
 I have completely restructured the website layout, now having both a frontend and backend. This is in an effort to ensure that form submissions can go to a secure cloud database rather than stored locally on a computer. My first thoughts were creating my own database, but after some researching learned it would have to be stored to my computer's hard drive, meaning I'd have to have it on at all times for the website to properly store data, which I don't want. Thankfully, my client understands that this is my first time ever creating a website, and so far learning Node hasn't been too stressful, just tedious compared to my frontend work, which was mostly fueled by my creativity and researching what other companies' websites were like.
