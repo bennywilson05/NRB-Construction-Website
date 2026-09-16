@@ -1,2 +1,6 @@
 .env
+<<<<<<< HEAD
 node_modules/
+=======
+backend/node_modules/
+>>>>>>> a3515ab (installed mongoose and dotenv, setting up mongodb to host the database, and added copyright to the html pages.)
