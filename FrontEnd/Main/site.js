@@ -55,34 +55,33 @@ if (galleryButton3 && galleryImage3) {
     };
 };
 
-getanestimatebutton.onclick = function(){
+getanestimatebutton.onclick = function() {
     
-    if(getanestimatesection){
+    if (getanestimatesection) {
         getanestimatesection.scrollIntoView({
-        behavior: "smooth"
-    });
+            behavior: "smooth"
+        });
     }
     
-    else{
-        window.location.href = "MainPage.html#get-an-estimate-form";
+    else {
+        window.location.href = "/#get-an-estimate-form";
     }
 };
 
 if (fullgallerybutton) {
     fullgallerybutton.onclick = function() {
-        window.location.href = "GalleryPage.html";
+        window.location.href = "/gallery";
     };
 }
 
-gallerybutton.onclick = function(){
-    window.location.href = "GalleryPage.html";
+gallerybutton.onclick = function() {
+    window.location.href = "/gallery";
 };
 
-companylogobutton.onclick = function(){
-    window.location.href = "MainPage.html";
+companylogobutton.onclick = function() {
+    window.location.href = "/";
 };
 
-contactbutton.onclick = function(){
-    window.location.href = "ContactPage.html";
+contactbutton.onclick = function() {
+    window.location.href = "/contact";
 };
-
