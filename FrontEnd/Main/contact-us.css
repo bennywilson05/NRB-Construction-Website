@@ -109,6 +109,24 @@
     cursor: pointer;
 }
 
-#email-error {
+
+.field-error {
+    display: none;
     color: red;
+    font-size: 18px;
+    margin-top: 5px;
+}
+
+.form-success {
+    display: none;
+    color: green;
+    font-size: 18px;
+    margin-top: 5px;
+}
+
+.form-error {
+    display: none;
+    color: red;
+    font-size: 18px;
+    margin-top: 5px;
 }

@@ -95,89 +95,150 @@ if (requestForm) {
         const formData = new FormData(requestForm);
         const data = Object.fromEntries(formData);
 
+      
         document.querySelectorAll(".field-error").forEach(function(error) {
             error.textContent = "";
             error.style.display = "none";
         });
 
+        const formError = document.getElementById("form-error");
+        const formSuccess = document.getElementById("form-success");
+
+  
+        formError.textContent = "";
+        formError.style.display = "none";
+
+        formSuccess.textContent = "";
+        formSuccess.style.display = "none";
+
         let hasError = false;
 
+
+       
         if (!data.fname.trim()) {
             const error = document.getElementById("fname-error");
+
             error.textContent = "This field is required";
             error.style.display = "block";
+
             hasError = true;
         }
 
+
+   
         if (!data.lname.trim()) {
             const error = document.getElementById("lname-error");
+
             error.textContent = "This field is required";
             error.style.display = "block";
+
             hasError = true;
         }
 
+
+       
         if (!data.email.trim()) {
             const error = document.getElementById("email-error");
+
             error.textContent = "This field is required";
             error.style.display = "block";
+
             hasError = true;
         }
 
+
+        
         if (!data.zipcode.trim()) {
             const error = document.getElementById("zipcode-error");
+
             error.textContent = "This field is required";
             error.style.display = "block";
+
             hasError = true;
         }
 
+
+       
         if (!data.project.trim()) {
             const error = document.getElementById("project-error");
+
             error.textContent = "This field is required";
             error.style.display = "block";
+
             hasError = true;
         }
 
+
+        
         if (hasError) {
             return;
         }
 
-        const response = await fetch("/api/requestforms", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(data)
-        });
 
-        const result = await response.json();
+        try {
 
-        const emailError = document.getElementById("email-error");
-        const formError = document.getElementById("form-error");
-        const formSuccess = document.getElementById("form-success");
+            const response = await fetch("/api/requestforms", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(data)
+            });
 
+            const result = await response.json();
 
-        if (response.status === 400) {
-            emailError.textContent = result.message;
-            emailError.style.display = "block";
-            return;
-        }
+            const emailError = document.getElementById("email-error");
 
 
-        if (response.status === 500) {
-            formError.textContent = "There was an error submitting the form. Please try again.";
-            formError.style.display = "block";
-            return;
-        }
+            if (response.status === 400) {
+                emailError.textContent = result.message;
+                emailError.style.display = "block";
+                return;
+            }
 
-        if (response.ok) {
+            if (response.status === 429) {
+                formError.textContent = result.message;
+                formError.style.display = "block";
+                return;
+            }
+
+          
+            if (response.status === 500) {
+                formError.textContent =
+                    "There was an error submitting the form. Please try again.";
+
+                formError.style.display = "block";
+                return;
+            }
+
+
+            
+            if (!response.ok) {
+                formError.textContent =
+                    "There was an error submitting the form. Please try again.";
+
+                formError.style.display = "block";
+                return;
+            }
+
+
             requestForm.reset();
 
             formSuccess.textContent = "Form successfully sent!";
             formSuccess.style.display = "block";
+
+        } catch (error) {
+
+            
+            formError.textContent =
+                "There was an error submitting the form. Please try again.";
+
+            formError.style.display = "block";
+
+            console.error("Request form submission error:", error);
         }
     });
 }
-
 const contactForm = document.getElementById("contact-us-form");
 
 if (contactForm) {
@@ -187,21 +248,144 @@ if (contactForm) {
         const formData = new FormData(contactForm);
         const data = Object.fromEntries(formData);
 
-        const response = await fetch("/api/contactform", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(data)
+        
+        document.querySelectorAll(".field-error").forEach(function(error) {
+            error.textContent = "";
+            error.style.display = "none";
         });
-        console.log(data);
 
-        const result = await response.json();
+        const formError = document.getElementById("form-error");
+        const formSuccess = document.getElementById("form-success");
 
-        const emailError = document.getElementById("email-error");
+    
+        formError.textContent = "";
+        formError.style.display = "none";
 
-        if (!response.ok) {
-        emailError.textContent = result.message;
+        formSuccess.textContent = "";
+        formSuccess.style.display = "none";
+
+        let hasError = false;
+
+
+   
+        if (!data.fname.trim()) {
+            const error = document.getElementById("fname-error");
+
+            error.textContent = "This field is required";
+            error.style.display = "block";
+
+            hasError = true;
+        }
+
+
+      
+        if (!data.lname.trim()) {
+            const error = document.getElementById("lname-error");
+
+            error.textContent = "This field is required";
+            error.style.display = "block";
+
+            hasError = true;
+        }
+
+
+    
+        if (!data.email.trim()) {
+            const error = document.getElementById("email-error");
+
+            error.textContent = "This field is required";
+            error.style.display = "block";
+
+            hasError = true;
+        }
+
+
+        if (!data.zipcode.trim()) {
+            const error = document.getElementById("zipcode-error");
+
+            error.textContent = "This field is required";
+            error.style.display = "block";
+
+            hasError = true;
+        }
+
+
+     
+        if (!data.message.trim()) {
+            const error = document.getElementById("message-error");
+
+            error.textContent = "This field is required";
+            error.style.display = "block";
+
+            hasError = true;
+        }
+
+
+      
+        if (hasError) {
+            return;
+        }
+
+
+        try {
+
+            const response = await fetch("/api/contactform", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(data)
+            });
+
+            const result = await response.json();
+
+            const emailError = document.getElementById("email-error");
+
+
+          
+            if (response.status === 400) {
+                emailError.textContent = result.message;
+                emailError.style.display = "block";
+                return;
+            }
+            
+            if (response.status === 429) {
+                formError.textContent = result.message;
+                formError.style.display = "block";
+                return;
+            }
+
+            if (response.status === 500) {
+                formError.textContent =
+                    "There was an error submitting the form. Please try again.";
+
+                formError.style.display = "block";
+                return;
+            }
+
+
+            if (!response.ok) {
+                formError.textContent =
+                    "There was an error submitting the form. Please try again.";
+
+                formError.style.display = "block";
+                return;
+            }
+
+
+            contactForm.reset();
+
+            formSuccess.textContent = "Form successfully sent!";
+            formSuccess.style.display = "block";
+
+        } catch (error) {
+
+            formError.textContent =
+                "There was an error submitting the form. Please try again.";
+
+            formError.style.display = "block";
+
+            console.error("Contact form submission error:", error);
         }
     });
 }
