@@ -12,6 +12,8 @@ dotenv.config({
 
 const app = express();
 
+app.set("trust proxy", 1);
+
 const mongoURI = process.env.MONGODB_URI;
 
 const formRoutes = require("./routes/formRoutes");
