@@ -3,6 +3,7 @@
     "version": "1.0.0",
     "private": true,
     "scripts": {
+        "postinstall": "npm --prefix Backend install",
         "start": "npm --prefix Backend start"
     },
     "engines": {
