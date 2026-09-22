@@ -3,7 +3,7 @@ const router = express.Router();
 
 const requestForm = require("../models/requestforms");
 const contactForm = require("../models/contactform");
-const transporter = require("../utils/mailer");
+const resend = require("../utils/mailer");
 
 router.post("/requestforms", async (req, res) => {
     try {
@@ -12,26 +12,30 @@ router.post("/requestforms", async (req, res) => {
         await newRequestForm.save();
 
         try {
-            await transporter.sendMail({
-                from: process.env.SMTP_USER,
+            const { error } = await resend.emails.send({
+                from: "NRB Construction <onboarding@resend.dev>",
                 to: process.env.COMPANY_EMAIL,
                 replyTo: req.body.email,
                 subject: "New Estimate Request",
 
                 text: `
-                    New Estimate Request
+New Estimate Request
 
-                    First Name: ${req.body.fname}
-                    Last Name: ${req.body.lname}
-                    Phone: ${req.body.phone || "Not provided"}
-                    Email: ${req.body.email}
-                    Address: ${req.body.address || "Not provided"}
-                    Zip Code: ${req.body.zipcode}
+First Name: ${req.body.fname}
+Last Name: ${req.body.lname}
+Phone: ${req.body.phone || "Not provided"}
+Email: ${req.body.email}
+Address: ${req.body.address || "Not provided"}
+Zip Code: ${req.body.zipcode}
 
-                    Project:
-                    ${req.body.project}
-                    `
+Project:
+${req.body.project}
+`
             });
+
+            if (error) {
+                throw new Error(error.message);
+            }
 
         } catch (emailError) {
             console.error("Estimate notification email failed:", emailError);
@@ -40,7 +44,7 @@ router.post("/requestforms", async (req, res) => {
         res.status(201).json({
             message: "Request form submitted successfully"
         });
-        
+
     } catch (err) {
         console.log(err);
 
@@ -54,35 +58,39 @@ router.post("/requestforms", async (req, res) => {
             message: "There was an error submitting the request form"
         });
     }
-
 });
 
+
 router.post("/contactform", async (req, res) => {
-   try {
+    try {
         const newContactForm = new contactForm(req.body);
 
         await newContactForm.save();
 
         try {
-            await transporter.sendMail({
-                from: process.env.SMTP_USER,
+            const { error } = await resend.emails.send({
+                from: "NRB Construction <onboarding@resend.dev>",
                 to: process.env.COMPANY_EMAIL,
                 replyTo: req.body.email,
                 subject: "New Contact Form Submission",
 
-            text: `
-                New Contact Form Submission
+                text: `
+New Contact Form Submission
 
-                First Name: ${req.body.fname}
-                Last Name: ${req.body.lname}
-                Phone: ${req.body.phone || "Not provided"}
-                Email: ${req.body.email}
-                Zip Code: ${req.body.zipcode}
+First Name: ${req.body.fname}
+Last Name: ${req.body.lname}
+Phone: ${req.body.phone || "Not provided"}
+Email: ${req.body.email}
+Zip Code: ${req.body.zipcode}
 
-                Message:
-                ${req.body.message}
-                `
-        });
+Message:
+${req.body.message}
+`
+            });
+
+            if (error) {
+                throw new Error(error.message);
+            }
 
         } catch (emailError) {
             console.error("Contact notification email failed:", emailError);
