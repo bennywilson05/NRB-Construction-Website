@@ -130,3 +130,44 @@
     font-size: 18px;
     margin-top: 5px;
 }
+
+@media (max-width: 768px) {
+
+    .contact-us-form {
+        padding: 30px 15px;
+    }
+
+    .contact-us-banner {
+        height: 220px;
+    }
+
+    .contact-us-banner-img {
+        height: 220px;
+    }
+
+    .contact-us-banner-header {
+        width: 90%;
+        font-size: 28px;
+        transform: translate(-50%, -50%);
+    }
+
+    .get-estimate-form-text-container {
+        width: 100%;
+        max-width: 500px;
+        height: auto;
+        padding: 25px 15px 50px;
+    }
+
+    .form-rows {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .form-grouping {
+        width: 100%;
+    }
+
+    .message-input-box {
+        width: 100%;
+    }
+}

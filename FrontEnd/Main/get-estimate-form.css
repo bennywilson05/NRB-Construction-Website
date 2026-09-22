@@ -139,3 +139,53 @@
     font-size: 18px;
     margin-top: 5px;
 }
+
+@media (max-width: 768px) {
+
+    .get-estimate-form {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+        padding: 30px 15px;
+    }
+
+    .get-estimate-form-img-container {
+        width: 100%;
+    }
+
+    .get-estimate-form-img {
+        width: 100%;
+        max-width: 500px;
+        height: 300px;
+        object-fit: cover;
+    }
+
+    .get-estimate-form-text-container {
+        width: 100%;
+        max-width: 500px;
+        height: auto;
+        padding: 25px 15px;
+    }
+
+    .form-rows {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .form-grouping {
+        width: 100%;
+    }
+
+    .project {
+        width: 100%;
+        padding-top: 20px;
+    }
+
+    .project-input-box {
+        width: 100%;
+    }
+
+    .input-box {
+        width: 100%;
+    }
+}

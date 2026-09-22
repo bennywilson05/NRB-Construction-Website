@@ -57,7 +57,40 @@
     border-radius: 5%;
 }
 
+@media (max-width: 768px) {
 
+    .about-us {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 20px;
+        padding: 20px;
+    }
+
+    .about-us-text {
+        max-width: 100%;
+        width: 100%;
+        padding-top: 20px;
+    }
+
+    .about-us-paragraph {
+        width: 100%;
+        font-size: 18px;
+    }
+
+    .about-us-img-container {
+        max-width: 100%;
+        width: 100%;
+        margin-top: 20px;
+        gap: 15px;
+    }
+
+    .about-us-img,
+    .about-us-img-special {
+        width: 100%;
+        max-width: 350px;
+        height: 250px;
+    }
+}
 
 
 

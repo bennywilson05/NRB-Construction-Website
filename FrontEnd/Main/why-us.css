@@ -44,3 +44,33 @@
     border-radius: 100%;
 }
 
+@media (max-width: 768px) {
+
+    .why-us {
+        flex-direction: column;
+        align-items: center;
+        min-height: auto;
+        padding: 20px;
+    }
+
+    .why-us-text {
+        width: 100%;
+    }
+
+    .why-us-paragraph {
+        width: 100%;
+        font-size: 18px;
+    }
+
+    .why-us-picture-container {
+        max-width: 100%;
+        width: 100%;
+        padding-top: 20px;
+    }
+
+    .why-us-img {
+        width: 150px;
+        height: 150px;
+        object-fit: cover;
+    }
+}

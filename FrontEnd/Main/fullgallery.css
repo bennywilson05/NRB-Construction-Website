@@ -37,3 +37,28 @@
     height: auto;
     display: block;
 }
+
+@media (max-width: 768px) {
+
+    .full-gallery {
+        padding-top: 110px;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .gallery-rows {
+        width: 100%;
+    }
+
+    .gallery-grouping {
+        width: 100%;
+        height: auto;
+        flex-direction: column;
+    }
+
+    .gallery-images {
+        max-width: 100%;
+        width: 100%;
+        height: auto;
+    }
+}

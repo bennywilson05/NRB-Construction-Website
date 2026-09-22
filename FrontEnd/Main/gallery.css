@@ -111,3 +111,41 @@
 .show-gallery-image.selected{
     background-color: rgba(170, 170, 170, 0.822);
 }
+
+@media (max-width: 768px) {
+
+    .gallery {
+        height: 400px;
+        padding-top: 50px;
+        margin-top: 90px;
+    }
+
+    .gallery-image-container {
+        min-height: 400px;
+    }
+
+    .gallery-image {
+        height: 400px;
+        object-fit: cover;
+    }
+
+    .gallery-overlay {
+        width: 90%;
+        height: 400px;
+    }
+
+    .gallery-head {
+        font-size: 28px;
+        margin-top: 80px;
+    }
+
+    .gallery-text {
+        width: 100%;
+        font-size: 17px;
+        padding: 10px;
+    }
+
+    .gallery-image-button-container {
+        width: 100%;
+    }
+}
