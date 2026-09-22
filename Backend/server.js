@@ -9,9 +9,8 @@ dotenv.config({
 });
 
 const app = express();
-const RequestForm = require("./models/requestforms");
-const ContactForm = require("./models/contactform");
 const mongoURI = process.env.MONGODB_URI;
+const formRoutes = require("./routes/formRoutes");
 
 mongoose.connect(mongoURI)
     .then((result) => console.log("connected to MongoDB"))
@@ -35,6 +34,9 @@ app.get("/gallery", (req, res) => {
     res.sendFile(path.join(frontendPath, "GalleryPage.html"));
 });
 
+app.use(express.json());
+
+app.use("/api", formRoutes);
 
 app.use((req, res) => {
     res.status(404).sendFile(path.join(frontendPath, "404.html"));

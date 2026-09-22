@@ -108,3 +108,7 @@
     transition: background-color 0.3s ease;
     cursor: pointer;
 }
+
+#email-error {
+    color: red;
+}

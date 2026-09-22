@@ -17,7 +17,8 @@ const requestFormSchema = new Schema({
     },
     email: {
         type: String,
-        required: true
+        required: true,
+        match: [/^[^\s@]+@[^\s@]+\.[^\s@]+$/, "Please enter a valid email address"]
     },
     address: {
         type: String,

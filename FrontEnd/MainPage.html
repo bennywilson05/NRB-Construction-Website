@@ -114,35 +114,41 @@
             <img id = "about-us1" class = "get-estimate-form-img" src = "Pictures/Form/WorkWithUs.png">
         </div>
 
-        <form id = "get-an-estimate-form" class = "get-estimate-form-text-container">
+        <form id = "get-an-estimate-form" class = "get-estimate-form-text-container" novalidate>
             <div class = "form-rows">
                 <div class = "form-grouping">
                     <label class = "required" for = "fname" ><strong>First Name</strong></label>
-                    <input class = "input-box" type = "text" placeholder = "First Name" required>
+                    <input class = "input-box" type = "text" name = "fname" placeholder = "First Name" required>
+                    <p id="fname-error" class="field-error"></p>
                 </div>
 
                 <div class = "form-grouping">
                     <label class = "required" for = "lname" ><strong>Last Name</strong></label>
-                    <input class = "input-box" type = "text" placeholder = "Last Name" required>
+                    <input class = "input-box" type = "text" name = "lname" placeholder = "Last Name" required>
+                    <p id="lname-error" class="field-error"></p>
                 </div>
 
                 <div class = "form-grouping">
                     <label for = "phone" ><strong>Phone</strong></label>
-                    <input class = "input-box" type = "text" placeholder = "Phone">
+                    <input class = "input-box" type = "text" name = "phone" placeholder = "Phone">
+                    <p id="phone-error" class="field-error"></p>
                 </div>
 
                 <div class = "form-grouping">
                     <label class = "required" for = "email" ><strong>Email</strong></label>
                     <input class = "input-box" type = "email" id = "email" name = "email" placeholder = "Email" required>
+                    <p id="email-error" class="field-error"></p>
                 </div>
 
                 <div class = "form-grouping">
                     <label for = "address" ><strong>Address</strong></label>
-                    <input class = "input-box" type = "text" placeholder = "Address">
+                    <input class = "input-box" type = "text" name = "address" placeholder = "Address">
+                    <p id="address-error" class="field-error"></p>
                 </div>
                 <div class = "form-grouping">
                     <label class = "required" for = "zipcode" ><strong>Zip Code</strong></label>
-                    <input class = "input-box" type = "text" placeholder = "Zip Code" required>
+                    <input class = "input-box" type = "text" name = "zipcode" placeholder = "Zip Code" required>
+                    <p id="zipcode-error" class="field-error"></p>
                 </div>
                 
 
@@ -150,11 +156,14 @@
 
             <div class = "project">
                 <div class = "form-grouping">
-                    <label class = "required" for = "email"><strong>Project</strong></label>
-                    <textarea class="project-input-box" placeholder = "Please describe your project!"></textarea>
+                    <label class = "required" for = "project"><strong>Project</strong></label>
+                    <textarea class="project-input-box" name = "project" placeholder = "Please describe your project!"></textarea>
+                    <p id="project-error" class="field-error"></p>
                 </div>       
             </div>
             <button class = "request-estimate-button">Request Estimate</button>
+            <p id="form-success" class="form-success"></p>
+            <p id="form-error" class="form-error"></p>
 
 
         </form>
