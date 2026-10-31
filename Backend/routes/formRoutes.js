@@ -13,7 +13,7 @@ router.post("/requestforms", async (req, res) => {
 
         try {
             const { error } = await resend.emails.send({
-                from: "NRB Construction <onboarding@resend.dev>",
+                from: "NRB Construction <website@nrbconstructionnj.com>",
                 to: process.env.COMPANY_EMAIL,
                 replyTo: req.body.email,
                 subject: "New Estimate Request",
