@@ -78,6 +78,10 @@
     }
 
     .about-us-img-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
         max-width: 100%;
         width: 100%;
         margin-top: 20px;
@@ -87,8 +91,12 @@
     .about-us-img,
     .about-us-img-special {
         width: 100%;
-        max-width: 350px;
-        height: 250px;
+        max-width: 150px;
+        height: 100px;
+    }
+
+    #about-us2{
+        display: none;
     }
 }
 

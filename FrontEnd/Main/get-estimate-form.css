@@ -168,24 +168,24 @@
     }
 
     .form-rows {
-        flex-direction: column;
-        gap: 20px;
+        flex-direction: row;
+        gap: 10px;
+        width: 100%;
     }
 
     .form-grouping {
+        width: calc(50% - 5px);
+    }
+
+    .input-box {
         width: 100%;
     }
 
     .project {
         width: 100%;
-        padding-top: 20px;
     }
 
     .project-input-box {
-        width: 100%;
-    }
-
-    .input-box {
-        width: 100%;
+        width: 200%;
     }
 }
