@@ -55,7 +55,8 @@
 .form-grouping{
     display: flex;
     flex-direction: column;
-    width: 225px;
+    width: 100%;
+    min-width: 0;
     align-items: flex-start;
     font-size: 20px;
     gap: 2px;
@@ -69,27 +70,27 @@
 }
 
 .form-rows{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: start;
+    width: 100%;
     gap: 25px 50px;
-    flex-wrap: wrap;
+    padding: 0 25px;
 }
 
 .project{
-    padding-top: 30px;
+    padding: 30px 25px 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 500px;
+    width: 100%;
     margin: 0 auto;
 }
 
 .project-input-box{
     font-family:Arial, Helvetica, sans-serif;
     font-size: 20px;
-    width: 500px;
+    width: 100%;
     height: 90px;
     box-sizing: border-box;
     resize: vertical;
@@ -120,21 +121,25 @@
 }
 
 .field-error {
-    display: none;
+    display: block;
+    visibility: hidden;
     color: red;
     font-size: 18px;
     margin-top: 5px;
+
 }
 
 .form-success {
-    display: none;
+    display: block;
+    visibility: hidden;
     color: green;
     font-size: 18px;
     margin-top: 5px;
 }
 
 .form-error {
-    display: none;
+    display: block;
+    visibility: hidden;
     color: red;
     font-size: 18px;
     margin-top: 5px;
@@ -163,18 +168,19 @@
     .get-estimate-form-text-container {
         width: 100%;
         max-width: 500px;
+        min-height: 500px;
         height: auto;
         padding: 25px 15px;
     }
 
     .form-rows {
-        flex-direction: row;
-        gap: 10px;
-        width: 100%;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 15px 10px;
+        padding: 15px 0;
     }
 
     .form-grouping {
-        width: calc(50% - 5px);
+        width: 100%;
     }
 
     .input-box {
@@ -182,10 +188,11 @@
     }
 
     .project {
+        padding-top: 50px;
         width: 100%;
     }
 
     .project-input-box {
-        width: 200%;
+        width: 100%;
     }
 }
