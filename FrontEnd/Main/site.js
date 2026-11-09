@@ -253,7 +253,7 @@ if (contactForm) {
         
         document.querySelectorAll(".field-error").forEach(function(error) {
             error.textContent = "";
-            error.style.display = "none";
+            error.style.visibility = "hidden";
         });
 
         const formError = document.getElementById("form-error");
@@ -261,10 +261,10 @@ if (contactForm) {
 
     
         formError.textContent = "";
-        formError.style.display = "none";
+        formError.style.visibility = "hidden";
 
         formSuccess.textContent = "";
-        formSuccess.style.display = "none";
+        formSuccess.style.visibility = "hidden";
 
         let hasError = false;
 
@@ -274,7 +274,7 @@ if (contactForm) {
             const error = document.getElementById("fname-error");
 
             error.textContent = "This field is required";
-            error.style.display = "block";
+            error.style.visibility = "visible";
 
             hasError = true;
         }
@@ -285,7 +285,7 @@ if (contactForm) {
             const error = document.getElementById("lname-error");
 
             error.textContent = "This field is required";
-            error.style.display = "block";
+            error.style.visibility = "visible";
 
             hasError = true;
         }
@@ -296,7 +296,7 @@ if (contactForm) {
             const error = document.getElementById("email-error");
 
             error.textContent = "This field is required";
-            error.style.display = "block";
+            error.style.visibility = "visible";
 
             hasError = true;
         }
@@ -306,7 +306,7 @@ if (contactForm) {
             const error = document.getElementById("zipcode-error");
 
             error.textContent = "This field is required";
-            error.style.display = "block";
+            error.style.visibility = "visible";
 
             hasError = true;
         }
@@ -317,7 +317,7 @@ if (contactForm) {
             const error = document.getElementById("message-error");
 
             error.textContent = "This field is required";
-            error.style.display = "block";
+            error.style.visibility = "visible";
 
             hasError = true;
         }
@@ -347,13 +347,13 @@ if (contactForm) {
           
             if (response.status === 400) {
                 emailError.textContent = result.message;
-                emailError.style.display = "block";
+                emailError.style.visibility = "visible";
                 return;
             }
             
             if (response.status === 429) {
                 formError.textContent = result.message;
-                formError.style.display = "block";
+                formError.style.visibility = "visible";
                 return;
             }
 
@@ -361,7 +361,7 @@ if (contactForm) {
                 formError.textContent =
                     "There was an error submitting the form. Please try again.";
 
-                formError.style.display = "block";
+                formError.style.visibility = "visible";
                 return;
             }
 
@@ -370,7 +370,7 @@ if (contactForm) {
                 formError.textContent =
                     "There was an error submitting the form. Please try again.";
 
-                formError.style.display = "block";
+                formError.style.visibility = "visible";
                 return;
             }
 
@@ -378,14 +378,14 @@ if (contactForm) {
             contactForm.reset();
 
             formSuccess.textContent = "Form successfully sent!";
-            formSuccess.style.display = "block";
+            formSuccess.style.visibility = "visible";
 
         } catch (error) {
 
             formError.textContent =
                 "There was an error submitting the form. Please try again.";
 
-            formError.style.display = "block";
+            formError.style.visibility = "visible";
 
             console.error("Contact form submission error:", error);
         }
