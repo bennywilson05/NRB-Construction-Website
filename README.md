@@ -8,7 +8,6 @@ A full-stack web application developed for NRB Construction, a New Jersey-based 
 ## Tech Stack
 
 **Frontend**
-- React.js
 - JavaScript
 - HTML5
 - CSS3
