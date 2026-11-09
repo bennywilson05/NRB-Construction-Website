@@ -37,7 +37,7 @@ A full-stack web application developed for NRB Construction, a New Jersey-based 
 - MongoDB integration for persistent storage of customer inquiries.
 
 ### Full-Stack Integration
-- Communication between the React frontend and Express backend.
+- Communication between the JavaScript frontend and Express backend.
 - Asynchronous HTTP requests for form submissions.
 - Server-side processing and database operations using Mongoose.
 
