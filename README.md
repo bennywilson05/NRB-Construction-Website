@@ -3,6 +3,8 @@
 
 A full-stack web application developed for NRB Construction, a New Jersey-based construction company. The website provides customers with information about the company's services, showcases completed projects, and allows potential clients to submit estimate requests through an online contact form.
 
+**Final Product Branch:** nrb-construction-website-revised
+
 **Live Website:** https://nrbconstructionnj.com/
 
 ## Tech Stack
